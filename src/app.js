@@ -1,0 +1,18 @@
+const express = require("express");
+const router = require("./Routes/Auth.route");
+const app = express();
+const cookieparser = require("cookie-parser");
+const CourseRouter = require("./Routes/Course.route");
+const { default: helmet } = require("helmet");
+const ContactRouter = require("./Routes/Contact.route");
+
+
+// middlewares 
+app.use(express.json())
+app.use(cookieparser())
+app.use(helmet())
+app.use('/auth', router)
+app.use('/course', CourseRouter)
+app.use('/contact' , ContactRouter)
+
+module.exports = app

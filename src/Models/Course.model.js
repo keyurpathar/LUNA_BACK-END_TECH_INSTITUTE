@@ -7,9 +7,9 @@ const courseSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    details : {
+    details: {
         type: String,
-        required: true 
+        required: true
     },
     price: {
         type: Number,
@@ -31,6 +31,6 @@ const courseSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 
-const courseModel = mongoose.model("course" , courseSchema);
+const courseModel = mongoose.model("course", courseSchema);
 
 module.exports = courseModel;

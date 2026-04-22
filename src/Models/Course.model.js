@@ -23,8 +23,8 @@ const courseSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tags: {
-        type: [String],
+    fullDetails: {
+        type: String,
         required: true
     }
 

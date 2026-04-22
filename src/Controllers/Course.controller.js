@@ -5,7 +5,7 @@ const addCourse = async (req, res) => {
 
     try {
 
-        const { name, details, price, discount, img_url, tags } = req.body;
+        const { name, details, price, discount, img_url, fullDetails } = req.body;
 
         const existCourse = await courseModel.findOne({ name });
 
@@ -16,7 +16,7 @@ const addCourse = async (req, res) => {
             });
         };
 
-        const newCourse = await courseModel.create({ name, details, price, discount, img_url, tags });
+        const newCourse = await courseModel.create({ name, details, price, discount, img_url, fullDetails });
 
         if (!newCourse) return res.status(400).json({
             success: false,
@@ -103,9 +103,9 @@ const updateCourse = async (req, res) => {
 
     try {
         const { id } = req.params;
-        const { name, details, price, discount, img_url, tags } = req.body;
+        const { name, details, price, discount, img_url, fullDetails } = req.body;
 
-        const updatedCourse = await courseModel.findByIdAndUpdate(id, { name, details, price, discount, img_url, tags }, { new: true });
+        const updatedCourse = await courseModel.findByIdAndUpdate(id, { name, details, price, discount, img_url, fullDetails }, { new: true });
 
         if (!updatedCourse) return res.status(404).json({
             success: false,

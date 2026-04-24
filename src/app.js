@@ -8,7 +8,6 @@ const ContactRouter = require("./Routes/Contact.route");
 const PaymentRouter = require("./Routes/Payment.route")
 const cors = require("cors")
 
-
 // middlewares 
 app.use(express.json())
 app.use(cookieparser())

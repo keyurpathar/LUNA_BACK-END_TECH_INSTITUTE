@@ -4,7 +4,8 @@ const contactSchema = new mongoose.Schema({
 
     number: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     }
     
 }, { timestamps: true })

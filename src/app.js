@@ -7,7 +7,7 @@ const { default: helmet } = require("helmet");
 const ContactRouter = require("./Routes/Contact.route");
 const PaymentRouter = require("./Routes/Payment.route")
 const cors = require("cors")
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
+
 
 // middlewares 
 app.use(express.json())
